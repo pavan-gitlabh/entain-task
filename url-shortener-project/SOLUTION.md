@@ -1,22 +1,22 @@
 # URL Shortener – SOLUTION.md
 
-## ✅ Overview
+## Overview
 
-This project implements a production-grade URL shortening service. It allows users to shorten URLs, specify custom short codes, apply expiration rules, and track analytics.
+This project implements URL shortening service. It allows users to shorten URLs, specify custom short codes, apply expiration rules, and track analytics.
 
 ---
 
-## 💡 Design Goals
+## Design Goals
 
 - Simplicity and clarity in codebase
 - RESTful APIs with proper status codes
-- Stateless controller, isolated service logic
-- In-memory persistence for simplicity (extendable)
+- Stateless controller, isolated service, repository logic
+- In-memory persistence for simplicity (extendable to rdbms or nosql)
 - Fully testable with JUnit and Mockito
 
 ---
 
-## 📦 Components
+## Components
 
 - **Model**: `UrlMapping` stores original, shortened URL, timestamps, visit count
 - **Service**: `UrlShortenerService` handles business logic: generation, validation, deduplication
@@ -24,7 +24,7 @@ This project implements a production-grade URL shortening service. It allows use
 
 ---
 
-## 🔁 Features Explained
+## Features Included
 
 | Feature                  | Notes                                           |
 |--------------------------|-------------------------------------------------|
@@ -38,7 +38,7 @@ This project implements a production-grade URL shortening service. It allows use
 
 ---
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Unit Tests
 - Validate each endpoint and edge case
@@ -54,7 +54,7 @@ This project implements a production-grade URL shortening service. It allows use
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Local:
 ```bash
@@ -78,12 +78,12 @@ docker-compose up --build
 
 ---
 
-## 🔒 Future Improvements
+## Future Improvements
 
-- Authentication & rate limiting
-- Persistent database (PostgreSQL, Redis)
+- Authentication & rate limiting (using api gateway)
+- Persistent database (PostgreSQL, Redis, Mongodb)
 - URL blacklist & safety checks
-- Metrics dashboard
+- Metrics dashboard ( Prometheus, Grafana config has been included )
 
 ---
 
